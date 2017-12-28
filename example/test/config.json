@@ -1,0 +1,8 @@
+{
+	"qc": "sh in qc",
+	"alignment": "sh in alignment",
+	"BQSR": "sh in BQSR",
+	"HLA_typing": "sh in HLA_typing",
+	"variant": "sh in variant",
+	"Peptide Selection": "sh in Peptide Selection"
+}

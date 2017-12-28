@@ -1,0 +1,86 @@
+{
+	"project": {
+		"name": "test",
+		"workspace": "/Users/ryan/PycharmProjects/Bioinformatics/example"
+	},
+	"samples": {
+		"bcawYe70": [
+			"/Users/ryan/PycharmProjects/Bioinformatics/example/data/bcawYe70_2.fq.gz",
+			"/Users/ryan/PycharmProjects/Bioinformatics/example/data/bcawYe70_1.fq.gz"
+		],
+		"qBYl5Ths": [
+			"/Users/ryan/PycharmProjects/Bioinformatics/example/data/qBYl5Ths_2.fq.gz",
+			"/Users/ryan/PycharmProjects/Bioinformatics/example/data/qBYl5Ths_1.fq.gz"
+		],
+		"ewGLUTCW": [
+			"/Users/ryan/PycharmProjects/Bioinformatics/example/data/ewGLUTCW_2.fq.gz",
+			"/Users/ryan/PycharmProjects/Bioinformatics/example/data/ewGLUTCW_1.fq.gz"
+		],
+		"HvnAtush": [
+			"/Users/ryan/PycharmProjects/Bioinformatics/example/data/HvnAtush_1.fq.gz",
+			"/Users/ryan/PycharmProjects/Bioinformatics/example/data/HvnAtush_2.fq.gz"
+		]
+	},
+	"process": {
+		"child": [
+			"single",
+			"group"
+		],
+		"single": {
+			"child": [
+				"Layer1,Layer2"
+			],
+			"Layer1": {
+				"child": [
+					"star",
+					"subread",
+					"bwa"
+				],
+				"star": {
+					"param": null
+				},
+				"subread": {
+					"param": null
+				},
+				"bwa": {
+					"param": null
+				}
+			},
+			"Layer2": {
+				"child": [
+					"stringtie",
+					"starfusion",
+					"tophat",
+					"gatk"
+				],
+				"stringtie": {
+					"param": null
+				},
+				"starfusion": {
+					"param": null
+				},
+				"tophat": {
+					"param": null
+				},
+				"gatk": {
+					"param": null
+				}
+			}
+		},
+		"group": {
+			"child": [
+				"Layer3"
+			],
+			"pairs": {},
+			"Layer3": {
+				"child": {},
+				"DEGs": {
+					"param": null
+				},
+				"Cluster": {
+					"param": null
+				}
+			}
+		}
+	}
+}

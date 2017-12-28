@@ -1,0 +1,70 @@
+{
+	"project": {
+		"projectname": "example",
+		"workspace": "/Users/ryan/PycharmProjects/Bioinformatics/example/neoantigen",
+		"global": null
+	},
+	"process": {
+		"alignment": {
+			"STAR": {
+				"Path": "/Path/to/star",
+				"Param": "params",
+				"Input": ".fq"
+			},
+			"STAR2": {
+				"Path": "/Path/to/star",
+				"Param": "params",
+				"Input": "fq"
+			},
+			"BWA": {
+				"Path": "/Path/to/bwa",
+				"Param": "params",
+				"Input": "fq"
+			}
+		},
+		"variant": {
+			"GATK": {
+				"Path": "/Path/to/GATK",
+				"Param": "params",
+				"Input": "bam",
+				"Dependence": [
+					"STAR"
+				]
+			}
+		},
+		"somatic": {
+			"varscan": {
+				"Path": "/Path/to/varscan",
+				"Param": "params",
+				"Dependence": [
+					"GATK",
+					"STAR"
+				],
+				"Input": "vcf"
+			},
+			"strekla": {
+				"Path": "/Path/to/strekla",
+				"Param": "params",
+				"Dependence": [
+					"GATK"
+				],
+				"Input": "vcf"
+			}
+		},
+		"neoantigen": {}
+	},
+	"sample": {
+		"chenmeiyun_N": {
+			"Step": "GATK",
+			"data": [
+				"/Users/ryan/PycharmProjects/Bioinformatics/example/vatian/"
+			]
+		},
+		"chenmeiyun_T": {
+			"Step": "GATK",
+			"data": [
+				"/Users/ryan/PycharmProjects/Bioinformatics/example/vatian/"
+			]
+		}
+	}
+}

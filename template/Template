@@ -1,0 +1,90 @@
+{
+	"project": {
+		"name": "test",
+		"workspace": "example",
+		"sample": [
+			"N",
+			"T",
+			"N1",
+			"T1",
+			"N2",
+			"T2"
+		]
+	},
+	"process": {
+		"single": {
+			"Layer1": {
+				"layer1": [
+					"star",
+					"subread",
+					"bwa"
+				],
+				"star": {
+					"param": null,
+					"input": null,
+					"output": null
+				},
+				"subread": {
+					"param": null,
+					"input": null,
+					"output": null
+				},
+				"bwa": {
+					"param": null,
+					"input": null,
+					"output": null
+				}
+			},
+			"Layer2": {
+				"layer2": [
+					"stringtie",
+					"starfusion",
+					"tophat",
+					"gatk"
+				],
+				"stringtie": {
+					"param": null,
+					"input": null,
+					"output": null
+				},
+				"starfusion": {
+					"param": null,
+					"input": null,
+					"output": null
+				},
+				"tophat": {
+					"param": null,
+					"input": null,
+					"output": null
+				},
+				"gatk": {
+					"param": null,
+					"input": null,
+					"output": null
+				}
+			}
+		},
+		"group": {
+			"pairs": {
+				"N": "T",
+				"N1,N2": "T1,T2"
+			},
+			"layer3": {
+				"pairs": {
+					"N": "T",
+					"N1,N2": "T1,T2"
+				},
+				"N": {
+					"param": null,
+					"input": null,
+					"output": null
+				},
+				"N1,N2": {
+					"param": null,
+					"input": null,
+					"output": null
+				}
+			}
+		}
+	}
+}
